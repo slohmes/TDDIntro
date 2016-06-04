@@ -22,9 +22,11 @@ public class AccountTests {
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
         assertThat(balance.withdraw(50), is(50));
     }
-//
-//    @Test
-//    public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
-//
-//    }
+
+    @Test
+    public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
+        balance.setTo(50);
+        assertThat(balance.withdraw(100), is(50));
+
+    }
 }

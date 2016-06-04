@@ -19,7 +19,7 @@ public class FactorialTests {
 
     private final Factorial factorial = new Factorial();
 
-    @Test // Make me pass first
+    @Test
     public void shouldReturnOneWhenNumberIsOne(){
         assertThat(new Factorial().compute(1), is(1));
     }
