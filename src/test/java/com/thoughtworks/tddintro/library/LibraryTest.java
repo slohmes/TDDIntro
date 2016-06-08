@@ -99,8 +99,7 @@ public class LibraryTest {
     public void shouldDisplayFormattedTimeWhenFormattedTimeIsAnEmptyString() {
 
         when(dateTimeFormatter.print(time)).thenReturn("");
-
-        Library library = new Library(books, printStream, dateTimeFormatter);
+        library = new Library(books, printStream, dateTimeFormatter);
 
         library.welcome(time);
 
@@ -110,8 +109,12 @@ public class LibraryTest {
     @Test
     public void shouldDisplayFormattedTimeWhenFormattedTimeIsNotEmpty() {
 
-        // implement me
-        // then move common test variables into a setup method
+        when(dateTimeFormatter.print(time)).thenReturn("11:20 AM");
+        library = new Library(books, printStream, dateTimeFormatter);
+
+        library.welcome(time);
+
+        verify(printStream).println("Welcome to the library! The current time is 11:20 AM");
 
     }
 }
